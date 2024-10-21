@@ -44,7 +44,7 @@ class CLAHE(object):
             img[..., 2] = self.clahe.apply(img[..., 2])
             img_out = np.float32(img)
             results[key] = img_out
-            return results
+        return results
 
 
 @PIPELINES.register_module()
