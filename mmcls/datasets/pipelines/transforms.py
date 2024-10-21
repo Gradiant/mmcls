@@ -46,6 +46,9 @@ class CLAHE(object):
             results[key] = img_out
         return results
 
+    def __repr__(self):
+        return self.__class__.__name__ + f'(clipLimit={self.clipLimit}, gridSize={self.gridSize})'
+
 
 @PIPELINES.register_module()
 class RandomCrop(object):
