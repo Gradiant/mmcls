@@ -9,7 +9,9 @@ from .formatting import (Collect, ImageToTensor, ToNumpy, ToPIL, ToTensor,
 from .loading import LoadImageFromFile
 from .transforms import (CenterCrop, ColorJitter, Lighting, Normalize, Pad,
                          RandomCrop, RandomErasing, RandomFlip,
-                         RandomGrayscale, RandomResizedCrop, Resize, CLAHE)
+                         RandomGrayscale, RandomResizedCrop, Resize)
+
+from .clahe import CLAHE
 
 __all__ = [
     'Compose', 'to_tensor', 'ToTensor', 'ImageToTensor', 'ToPIL', 'ToNumpy',
