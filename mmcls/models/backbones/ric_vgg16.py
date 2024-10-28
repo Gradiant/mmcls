@@ -16,7 +16,7 @@ from .base_backbone import BaseBackbone
 
 @BACKBONES.register_module()
 class RIC_VGG16(BaseBackbone):
-    def __init__(self, BATCH_SIZE):
+    def __init__(self, BATCH_SIZE, num_classes):
         super(RIC_VGG16, self).__init__()
 
         self.coords11 = self.generate_coordinates(BATCH_SIZE, 128, 128)
@@ -55,7 +55,7 @@ class RIC_VGG16(BaseBackbone):
             nn.ReLU(True),
             nn.Linear(4096, 4096),
             nn.ReLU(True),
-            nn.Linear(4096, 30),
+            nn.Linear(4096, num_classes),
         )
 
         for m in self.modules():
